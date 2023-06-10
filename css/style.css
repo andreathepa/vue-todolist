@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: white;
+}
+
+.background{
+   background-color: rgb(170, 52, 52); 
+}
+
+.dimension{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.square{
+    background-color: rgb(0, 153, 255);
+}
+
+ul li{
+    border-bottom: 1px solid white;
+    padding: 25px 10px;
+}
+
+.input{
+    width: 100%;
+}
+
+.input-task{
+    width: 80%;
+    border: none;
+    padding: 5px;
+}
