@@ -5,6 +5,7 @@ createApp({
       return{
         
         title_app: 'Vue Toobolist',
+        new_task: [],
         tasks: [
           {
             text: 'Seguire lezione',
@@ -38,6 +39,16 @@ createApp({
       },
       deleteTask(index){
         this.tasks.splice(index,1);
+      },
+      addTask(){
+        let obj = {
+          text: this.new_task,
+          done: false
+        }
+
+        this.tasks.push(obj);
+
+        this.new_task = '';
       }
     },
     

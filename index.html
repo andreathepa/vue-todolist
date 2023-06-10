@@ -29,10 +29,11 @@
                 <div class="row">
                     <div class="col">
                         <div class="content square mt-5 p-3 dimension">
+                            <h3>La mia todolist</h3>
                             <ul class="list-unstyled">
-                                <li>
-                                    <h3>La mia todolist</h3>
-                                </li>
+                                <div v-if="tasks.length === 0">
+                                    <h4>Non ci sono task per oggi</h4>
+                                </div>
 
                                 <!-- 1.Grazie al v-for riesco a ciclare la produzione di li nel DOM, con task e index in tasks che è l'array di objects -->
 
@@ -62,8 +63,8 @@
                                 </li>
                             </ul>
                             <div class="input d-flex justify-content-between">
-                                <input type="text" class="input-task p-2" placeholder="Add task" name="new_task" id="new_task">
-                                <button class="btn btn-sm btn-success"><i class="fa-solid fa-plus"></i> Aggiungi</button>
+                                <input type="text" class="input-task p-2" placeholder="Add task" name="new_task" id="new_task" v-model="new_task" @keyup.enter="addTask">
+                                <button class="btn btn-sm btn-success" @click="addTask"><i class="fa-solid fa-plus"></i> Aggiungi</button>
                             </div>
                         </div>
                     </div>
