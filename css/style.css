@@ -35,3 +35,7 @@ ul li{
     border: none;
     padding: 5px;
 }
+
+.task_done{
+    text-decoration: line-through;
+}

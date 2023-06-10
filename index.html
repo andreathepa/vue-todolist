@@ -16,7 +16,7 @@
             <div class="container-fluid background">
                 <div class="row">
                     <div class="col">
-                        <div class="content p-2 d-flex justify-content-start text-white dimension">
+                        <div class="content p-2 d-flex justify-content-center text-white dimension">
                             <h1>Vue Todolist</h1>
                         </div>
                     </div>
@@ -30,39 +30,33 @@
                     <div class="col">
                         <div class="content square mt-5 p-3 dimension">
                             <ul class="list-unstyled">
-                                <li class="">
+                                <li>
                                     <h3>La mia todolist</h3>
                                 </li>
-                                <li>
+
+                                <!-- 1.Grazie al v-for riesco a ciclare la produzione di li nel DOM, con task e index in tasks che è l'array di objects -->
+
+                                <li v-for="(task, index) in tasks">
                                     <div class="d-flex justify-content-between">
-                                        <div>
-                                            Seguire la lezione di boolean
+
+                                        <!-- 3.Inserendo :class="task.done ? 'task_done' : '' " gli diciamo se task.done è vero (?) allora attiviamo task_done che ci mette la linea sulla task fatta altrimenti è falso e non succede nulla -->
+
+                                        <div :class="task.done ? 'task_done' : '' ">
+
+                                            <!-- 2.Inserendo .text vado a prendere il text di ogni singolo object dell'array, includendolo tra i baffi, come fosse un v-text -->
+
+                                            {{ task.text }}
                                         </div>
                                         <div>
-                                            <button class="btn btn-sm btn-success mx-2"><i class="fa-solid fa-check"></i></button>
-                                            <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="d-flex justify-content-between">
-                                        <div>
-                                            Seguire la lezione di boolean
-                                        </div>
-                                        <div>
-                                            <button class="btn btn-sm btn-success mx-2"><i class="fa-solid fa-check"></i></button>
-                                            <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="d-flex justify-content-between">
-                                        <div>
-                                            Seguire la lezione di boolean
-                                        </div>
-                                        <div>
-                                            <button class="btn btn-sm btn-success mx-2"><i class="fa-solid fa-check"></i></button>
-                                            <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></button>
+
+                                            <!-- 4.Inserire evento click -->
+
+                                            <button class="btn btn-sm mx-2" :class="task.done ? 'btn-dark' : 'btn-primary'" @click="changeTaskStatus(index)">
+                                                <i class="fas" :class="task.done ? 'fa-x' : 'fa-check'"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger" @click="deleteTask(index)">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
                                         </div>
                                     </div>
                                 </li>
@@ -77,7 +71,7 @@
             </div>
         </main>
 
-        <footer  class="mt-5">
+        <footer  class="mt-5 background">
             <div class="container-fluid background">
                 <div class="row">
                     <div class="col">
@@ -88,11 +82,11 @@
             </div>
         </footer>
         
-                    
     </div>
-
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
+                
 
 </body>
 </html>
