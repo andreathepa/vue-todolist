@@ -25,7 +25,7 @@ createApp({
           },
           {
             text: 'Leggere libro',
-            done:true
+            done: false
           },
         ]
 
