@@ -9,23 +9,28 @@ createApp({
         tasks: [
           {
             text: 'Seguire lezione',
-            done:false
+            done:false,
+            edit_enable:false
           },
           {
             text: 'Pulire a terra',
-            done:false
+            done:false,
+            edit_enable:false
           },
           {
             text: 'Finire Batman',
-            done:false
+            done:false,
+            edit_enable:false
           },
           {
             text: 'Comprare cornetti',
-            done:false
+            done:false,
+            edit_enable:false
           },
           {
             text: 'Leggere libro',
-            done: false
+            done:false,
+            edit_enable:false
           },
         ]
 
@@ -49,7 +54,10 @@ createApp({
         this.tasks.push(obj);
 
         this.new_task = '';
+      },
+      editTask(index){
+        this.tasks[index].edit_enable = !this.tasks[index].edit_enable
       }
-    },
+    }
     
   }).mount('#app');
