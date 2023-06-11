@@ -52,8 +52,12 @@
 
                                             <!-- 4.Inserire evento click -->
 
-                                            <button class="btn btn-sm mx-2" :class="task.done ? 'btn-dark' : 'btn-primary'" @click="changeTaskStatus(index)">
+                                            <button class="btn btn-sm" :class="task.done ? 'btn-dark' : 'btn-primary'" @click="changeTaskStatus(index)">
                                                 <i class="fas" :class="task.done ? 'fa-x' : 'fa-check'"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-warning mx-2" @click="editTask(index)">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
                                             </button>
                                             <button class="btn btn-sm btn-danger" @click="deleteTask(index)">
                                                 <i class="fa-solid fa-trash"></i>
@@ -63,6 +67,9 @@
                                 </li>
                             </ul>
                             <div class="input d-flex justify-content-between">
+
+                                <!-- 5.Inserire evento click add task e keyup.enter affinchè quando si preme invio venga stampata nella to do il comando -->
+
                                 <input type="text" class="input-task p-2" placeholder="Add task" name="new_task" id="new_task" v-model="new_task" @keyup.enter="addTask">
                                 <button class="btn btn-sm btn-success" @click="addTask"><i class="fa-solid fa-plus"></i> Aggiungi</button>
                             </div>

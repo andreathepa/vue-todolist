@@ -6,11 +6,3 @@ BONUS
 
 Aggiungete la funzionalità di edit della task
 
-Svolgimento
-
-1 Creare struttura statica
-
-2 Inserire v for per ciclare li
-
-3 Inserire una condizione per la quale se è vera viene attivata una classe
-
